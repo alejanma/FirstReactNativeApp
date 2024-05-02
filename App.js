@@ -12,6 +12,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as MediaLibrary from 'expo-media-library';
 import { captureRef } from 'react-native-view-shot';
 import DomToImage from 'dom-to-image';
+import { StatusBar } from 'expo-status-bar';
 
 const PlaceholderImage = require('./assets/vegetables.jpg')
 
@@ -95,8 +96,9 @@ export default function App() {
   }
 
   return (
-    <GestureHandlerRootView style={styles.container}>
 
+    <GestureHandlerRootView style={styles.container}>
+      <StatusBar style="auto" />
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
